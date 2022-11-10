@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav>
+    <nav class="nav-bar">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
@@ -8,25 +8,23 @@
   </div>
 </template>
 
-<style lang="scss">
+<style >
+
+#meu-body{
+  background-color: #384c61;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+#app .nav-bar{
+  padding: 20px;
   text-align: center;
-  color: #2c3e50;
+  margin: auto;
 }
-
-nav {
-  padding: 30px;
-
-  a {
+.nav-bar a {
     font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    color: #ffffff;
+    text-decoration: none;
   }
-}
 </style>

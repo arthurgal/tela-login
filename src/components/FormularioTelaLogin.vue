@@ -1,10 +1,10 @@
 <template>
-    <div class="formulario">
+    <b-container>
         <h3 class="titulo">Login De Membro</h3>
-        <b-form @submit="onSubmit" @reset="onReset">
+        <b-form @submit="onSubmit">
             <b-form-group 
                 id="input-group-1"  
-                label-for="input-1"    
+                label-for="input-1"   
                 >
 
             <b-form-input 
@@ -18,12 +18,12 @@
             </b-form-group>
 
             <b-form-group 
-                id="input-group-1"  
-                label-for="input-1"    
+                id="input-group-2"  
+                label-for="input-2"    
                 >
 
             <b-form-input 
-                id="input-1" 
+                id="input-2" 
                 v-model="form.senha" 
                 type="password" 
                 placeholder="Senha" 
@@ -32,9 +32,9 @@
 
             </b-form-group>
 
-            <b-button class="botao-form" type="submit" variant="primary">Login</b-button>
+            <b-button id="botao-form" type="submit" variant="primary">Login</b-button>
         </b-form>
-    </div>
+    </b-container>
 </template>
 
 <script>
@@ -59,16 +59,22 @@
 
 <style>
 
-    .formulario{
-        text-align: center;
-        margin: 120px auto;
-        padding: 30px;
-    }
 
-    .botao-form{
+    #botao-form{
         margin-top: 10px;
         width: 100%;
-        color: #2962b8;
+        background-color: #384c61;
+        color: #f7f7f8;
+        border: none;
+    }
+
+    #botao-form:hover{
+        background-color: #2b3c4e;
+        color: #f7f7f8;
+    }
+
+    #botao-form:active{
+      background-color: #213141;
     }
 
     .titulo{
@@ -76,8 +82,11 @@
         font-size: 22px;
         margin-bottom: 20px;
         font-weight: bold;
-        color: #384c61;
-        
+        color: #384c61;   
+    }
+
+    #input-group-1{
+      padding-bottom: 10px;
     }
 
 </style>

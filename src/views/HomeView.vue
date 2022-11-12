@@ -1,14 +1,16 @@
 <template>
-  <div class="home">
-    <div class="imagem-tela">
-      <div class="imagem">
-        <ImagemTelaLoginVue></ImagemTelaLoginVue>
-      </div>
-    </div>
-    <div class="form-tela">
-      <FormularioTelaLogin></FormularioTelaLogin>
-    </div>
-  </div>
+  <b-container class="home">
+    <b-row cols="2" class="justify-content-md-center text-center tamanho-linha">
+      <b-col align-self="center">
+        <div class="imagem-tela">
+          <ImagemTelaLoginVue></ImagemTelaLoginVue>
+        </div>
+      </b-col>
+      <b-col align-self="center">
+        <FormularioTelaLogin></FormularioTelaLogin>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -26,15 +28,17 @@ export default {
 
 <style scoped>
 .home {
+  width: 500px;
   border-radius: 30px;
-  display: flex;
-  margin: 200px auto;
-  width: 550px;
-  height: 450px;
   background-color: rgb(245, 245, 245);
   -webkit-box-shadow: 1px 0px 28px 0px rgba(50, 50, 50, 0.33);
   -moz-box-shadow: 1px 0px 28px 0px rgba(50, 50, 50, 0.33);
   box-shadow: 1px 0px 28px 0px rgba(50, 50, 50, 0.33);
+}
+
+.tamanho-linha{
+  height: 350px;
+
 }
 
 
@@ -44,8 +48,6 @@ export default {
 }
 
 .imagem-tela{
-  width: 100%;
-  margin: auto;
   border-right: solid 2px rgb(228, 227, 227);
 }
 

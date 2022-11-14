@@ -10,7 +10,8 @@
             <b-form-input 
                 id="input-1" 
                 v-model="form.login" 
-                type="login" 
+                type="login"
+                size = "sm"
                 placeholder="Login" 
                 required>
             </b-form-input>
@@ -25,7 +26,8 @@
             <b-form-input 
                 id="input-2" 
                 v-model="form.senha" 
-                type="password" 
+                type="password"
+                size = "sm" 
                 placeholder="Senha" 
                 required>
             </b-form-input>

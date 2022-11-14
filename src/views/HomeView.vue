@@ -1,12 +1,12 @@
 <template>
   <b-container class="home">
     <b-row cols="2" class="justify-content-md-center text-center tamanho-linha">
-      <b-col align-self="center">
+      <b-col cols="12" md="6" sm="12" align-self="center">
         <div class="imagem-tela">
           <ImagemTelaLoginVue></ImagemTelaLoginVue>
         </div>
       </b-col>
-      <b-col align-self="center">
+      <b-col cols="12" md="6" sm="12" align-self="center">
         <FormularioTelaLogin></FormularioTelaLogin>
       </b-col>
     </b-row>

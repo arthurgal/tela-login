@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ImagemTelaLoginVue from '@/components/ImagemTelaLogin.vue';
-import FormularioTelaLogin from '@/components/FormularioTelaLogin.vue';
+import ImagemTelaLoginVue from '@/components/TelaLoginImagem.vue';
+import FormularioTelaLogin from '@/components/TelaLoginFormulario.vue';
 export default {
   name: "HomeView",
   components:{

@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <nav class="nav-bar">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view/>
   </div>
 </template>
@@ -11,7 +7,7 @@
 <style >
 
 #meu-body{
-  background-color: #384c61;
+  background-color: #f3f3f3;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -2,11 +2,11 @@
     <div>
         <b-row>
             <b-col>
-                <MenuCadastroEquipamento/>
+                <MenuPrincipal/>
             </b-col>
             <b-col cols="10" class="formulario">
                 <div>
-                    formulario
+                    <FormularioEquipamento/>
                 </div>
             </b-col>
         </b-row>
@@ -16,10 +16,12 @@
 </template>
 
 <script>
-    import MenuCadastroEquipamento from "@/components/MenuCadastroEquipamento.vue"
+    import MenuPrincipal from "@/components/MenuPrincipal.vue"
+    import FormularioEquipamento from "@/components/FormularioEquipamento.vue";
     export default {
         components:{
-            MenuCadastroEquipamento
+            MenuPrincipal,
+            FormularioEquipamento
         }
     }
 </script>

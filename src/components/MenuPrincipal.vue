@@ -22,7 +22,7 @@
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item active>Sala</b-nav-item>
+                <b-nav-item to="/sala" active>Sala</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">

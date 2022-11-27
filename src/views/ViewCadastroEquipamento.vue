@@ -1,13 +1,11 @@
 <template>
     <div>
-        <b-row>
-            <b-col>
+        <b-row no-gutters>
+            <b-col sm="12" md="4" lg="5" xl="2">
                 <MenuPrincipal/>
             </b-col>
-            <b-col cols="10" class="formulario">
-                <div>
-                    <FormularioEquipamento/>
-                </div>
+            <b-col auto>
+                <FormularioEquipamento/>
             </b-col>
         </b-row>
 

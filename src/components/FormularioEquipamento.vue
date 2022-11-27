@@ -1,5 +1,5 @@
 <template>
-    <div class="w-50 m-auto p-5">
+    <b-container class="w-50 m-auto p-5">
         <h2 class="text-center mb-4">Cadastro de Equipamentos</h2>
         <b-form >
             <b-form-group id="input-group-1" label="Nome" label-for="input-1"
@@ -23,7 +23,7 @@
                 </b-form-input>
             </b-form-group>
         </b-form>
-    </div>
+    </b-container>
 </template>
 
 <script>

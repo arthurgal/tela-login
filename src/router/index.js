@@ -36,6 +36,13 @@ const routes = [
     name: 'setor',
     
     component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroSetor.vue')
+  },
+
+  {
+    path: '/predio',
+    name: 'predio',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroPredio.vue')
   }
 
 ]

@@ -7,17 +7,17 @@
         <b-nav justified vertical>
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item active>Equipamento</b-nav-item>
+                <b-nav-item to="/equipamento" active>Equipamento</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item active>Usuario</b-nav-item>
+                <b-nav-item to="/usuario" active>Usuario</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item active>Setor</b-nav-item>
+                <b-nav-item to="/setor" active>Setor</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">

@@ -5,7 +5,7 @@
                 <MenuPrincipal/>
             </b-col>
             <b-col auto>
-                <FormularioEquipamento/>
+                <FormularioUsuario/>
             </b-col>
         </b-row>
 
@@ -15,11 +15,11 @@
 
 <script>
     import MenuPrincipal from "@/components/MenuPrincipal.vue"
-    import FormularioEquipamento from "@/components/FormularioEquipamento.vue";
+    import FormularioUsuario from "@/components/FormularioUsuario.vue";
     export default {
         components:{
             MenuPrincipal,
-            FormularioEquipamento
+            FormularioUsuario
         }
     }
 </script>

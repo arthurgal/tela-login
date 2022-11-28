@@ -18,7 +18,7 @@
                 id="input-1"
                 v-model="formulario.matricula"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>

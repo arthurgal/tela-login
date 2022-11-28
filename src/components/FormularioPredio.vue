@@ -1,7 +1,7 @@
 <template>
   <b-container class="w-75 m-auto pt-5">
     <b-row>
-      <h2 class="mb-4">Cadastro de Novo Sala</h2>
+      <h2 class="mb-4">Cadastro de Novo Predio</h2>
     </b-row>
 
     <b-row>
@@ -18,7 +18,7 @@
                 id="input-1"
                 v-model="formulario.predio"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>

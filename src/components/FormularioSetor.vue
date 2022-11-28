@@ -18,7 +18,7 @@
                 id="input-1"
                 v-model="formulario.setor"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>

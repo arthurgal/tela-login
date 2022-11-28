@@ -13,7 +13,7 @@
                 id="input-1"
                 v-model="formulario.nome"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>
@@ -58,7 +58,7 @@
                 id="input-4"
                 v-model="formulario.marca"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>
@@ -74,7 +74,7 @@
                 id="input-5"
                 v-model="formulario.modelo"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>
@@ -90,7 +90,7 @@
                 id="input-6"
                 v-model="formulario.numSerie"
                 type="text"
-                require
+                required
               ></b-form-input>
             </b-form-group>
           </b-col>

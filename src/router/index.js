@@ -43,6 +43,20 @@ const routes = [
     name: 'predio',
     
     component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroPredio.vue')
+  },
+
+  {
+    path: '/status',
+    name: 'status',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroStatus.vue')
+  },
+
+  {
+    path: '/tipo',
+    name: 'tipo',
+    
+    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroTipo.vue')
   }
 
 ]

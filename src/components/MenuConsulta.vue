@@ -2,7 +2,7 @@
     <b-container class="side-bar">
         <b-row class="pt-3 pb-2 mb-3 border-bottom">
             <b-col class="mt-2">
-                <h3>Cadastro</h3>
+                <h3>Consulta</h3>
             </b-col>
         </b-row>
         

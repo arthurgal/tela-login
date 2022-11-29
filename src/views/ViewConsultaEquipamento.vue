@@ -6,7 +6,7 @@
             </b-col>
             <b-col auto>
                 <FormulariConsultaEquipamento/>
-                
+                <TabelaConsultaEquipamento/>
             </b-col>
         </b-row>
 
@@ -17,10 +17,12 @@
 <script>
     import MenuConsulta from "@/components/MenuConsulta.vue"
     import FormulariConsultaEquipamento from "@/components/FormulariConsultaEquipamento.vue"
+    import TabelaConsultaEquipamento from "@/components/TabelaConsultaEquipamento.vue";
     export default {
         components:{
-            MenuConsulta,
-            FormulariConsultaEquipamento
-        }
+    MenuConsulta,
+    FormulariConsultaEquipamento,
+    TabelaConsultaEquipamento
+}
     }
 </script>

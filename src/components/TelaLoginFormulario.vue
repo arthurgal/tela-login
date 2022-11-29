@@ -34,7 +34,7 @@
 
             </b-form-group>
 
-            <b-button to="/equipamento" id="botao-form" type="submit" variant="primary">Login</b-button>
+            <b-button to="cadastro/equipamento" id="botao-form" type="submit" variant="primary">Login</b-button>
         </b-form>
     </b-container>
 </template>

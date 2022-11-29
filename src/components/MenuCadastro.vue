@@ -1,10 +1,7 @@
 <template>
     <b-container class="side-bar">
         <b-row class="pt-3 pb-2 mb-3 border-bottom">
-            <b-col cols="auto">
-                <img class="imagem-almoxarifado" src="../../public/img/almoxarifado.png">
-            </b-col>
-            <b-col cols="auto" class="mt-2">
+            <b-col class="mt-2">
                 <h3>Cadastro</h3>
             </b-col>
         </b-row>
@@ -12,37 +9,37 @@
         <b-nav vertical>
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/equipamento" active>Equipamento</b-nav-item>
+                <b-nav-item to="/cadastro/equipamento" active>Equipamento</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/usuario" active>Usuario</b-nav-item>
+                <b-nav-item to="/cadastro/usuario" active>Usuario</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/setor" active>Setor</b-nav-item>
+                <b-nav-item to="/cadastro/setor" active>Setor</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/sala" active>Sala</b-nav-item>
+                <b-nav-item to="/cadastro/sala" active>Sala</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/predio" active>Predio</b-nav-item>
+                <b-nav-item to="/cadastro/predio" active>Predio</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/status" active>Status Equipamento</b-nav-item>
+                <b-nav-item to="/cadastro/status" active>Status Equipamento</b-nav-item>
             </div>
 
             <div class="d-flex align-items-center div-tipicos">
                 <b-icon variant="light" icon="arrow-right-circle"></b-icon>
-                <b-nav-item to="/tipo" active>Tipo Equipamento</b-nav-item>
+                <b-nav-item to="/cadastro/tipo" active>Tipo Equipamento</b-nav-item>
             </div>
 
         </b-nav>
@@ -61,7 +58,7 @@ export default {
     -webkit-box-shadow: 4px 0px 20px -11px #000000;
     box-shadow: 4px 0px 20px -11px #000000;
     background-color: #384c61;
-    height: 735px;
+    height: 1000px;
 }
 
 .side-bar h3 {

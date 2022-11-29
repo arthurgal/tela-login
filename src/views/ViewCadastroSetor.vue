@@ -2,7 +2,7 @@
     <div>
         <b-row no-gutters>
             <b-col sm="12" md="4" lg="5" xl="2">
-                <MenuPrincipal/>
+                <MenuCadastro/>
             </b-col>
             <b-col auto>
                 <FormularioSetor/>
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-    import MenuPrincipal from "@/components/MenuPrincipal.vue"
+    import MenuCadastro from "@/components/MenuCadastro.vue"
     import FormularioSetor from "@/components/FormularioSetor.vue";
     export default {
         components:{
-            MenuPrincipal,
+            MenuCadastro,
             FormularioSetor
         }
     }

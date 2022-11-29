@@ -11,52 +11,62 @@ const routes = [
     component: () => import("../views/HomeView.vue")
   },
   {
-    path: '/sala',
+    path: '/cadastro/sala',
     name: 'sala',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroSala.vue')
+    component: () => import('../views/ViewCadastroSala.vue')
   },
 
   {
-    path: '/equipamento',
+    path: '/cadastro/equipamento',
     name: 'equipamento',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroEquipamento.vue')
+    component: () => import('../views/ViewCadastroEquipamento.vue')
   },
 
   {
-    path: '/usuario',
+    path: '/cadastro/usuario',
     name: 'usuario',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroUsuario.vue')
+    component: () => import('../views/ViewCadastroUsuario.vue')
   },
 
   {
-    path: '/setor',
+    path: '/cadastro/setor',
     name: 'setor',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroSetor.vue')
+    component: () => import('../views/ViewCadastroSetor.vue')
   },
 
   {
-    path: '/predio',
+    path: '/cadastro/predio',
     name: 'predio',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroPredio.vue')
+    component: () => import('../views/ViewCadastroPredio.vue')
   },
 
   {
-    path: '/status',
+    path: '/cadastro/status',
     name: 'status',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroStatus.vue')
+    component: () => import('../views/ViewCadastroStatus.vue')
   },
 
   {
-    path: '/tipo',
+    path: '/cadastro/tipo',
     name: 'tipo',
     
-    component: () => import(/* webpackChunkName: "about" */ '../views/ViewCadastroTipo.vue')
+    component: () => import('../views/ViewCadastroTipo.vue')
+  },
+
+
+  //EndPoints Das Consultas
+
+  {
+    path: '/consulta/equipamento',
+    name: 'consulta',
+    
+    component: () => import('../views/ViewConsultaEquipamento.vue')
   }
 
 ]

@@ -2,10 +2,10 @@
     <div>
         <b-row no-gutters>
             <b-col sm="12" md="4" lg="5" xl="2">
-                <MenuCadastro/>
+                <MenuConsulta/>
             </b-col>
             <b-col auto>
-                <FormularioEquipamento/>
+                <FormularioStatus/>
             </b-col>
         </b-row>
 
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-    import MenuCadastro from "@/components/MenuCadastro.vue"
-    import FormularioEquipamento from "@/components/FormularioEquipamento.vue";
+    import MenuConsulta from "@/components/MenuConsulta.vue"
+    import FormularioStatus from "@/components/FormularioStatus.vue"
     export default {
         components:{
-            MenuCadastro,
-            FormularioEquipamento
+            MenuConsulta,
+            FormularioStatus
         }
     }
 </script>

@@ -5,7 +5,8 @@
                 <MenuConsulta/>
             </b-col>
             <b-col auto>
-                <FormularioStatus/>
+                <FormulariConsultaEquipamento/>
+                
             </b-col>
         </b-row>
 
@@ -15,11 +16,11 @@
 
 <script>
     import MenuConsulta from "@/components/MenuConsulta.vue"
-    import FormularioStatus from "@/components/FormularioStatus.vue"
+    import FormulariConsultaEquipamento from "@/components/FormulariConsultaEquipamento.vue"
     export default {
         components:{
             MenuConsulta,
-            FormularioStatus
+            FormulariConsultaEquipamento
         }
     }
 </script>

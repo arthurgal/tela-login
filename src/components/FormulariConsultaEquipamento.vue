@@ -1,7 +1,7 @@
 <template>
     <b-container class="w-75 m-auto pt-5">
         <b-row>
-            <h2 class="mb-4">Cadastro de Novo Equipamentos</h2>
+            <h2 class="mb-4">Consulta de Equipamentos</h2>
         </b-row>
         <b-row>
             <b-form>

@@ -57,7 +57,7 @@ export default {
 .side-bar {
     -webkit-box-shadow: 4px 0px 20px -11px #000000;
     box-shadow: 4px 0px 20px -11px #000000;
-    background-color: #384c61;
+    background-color: #20262c;
     height: 1000px;
 }
 
@@ -82,6 +82,6 @@ a:hover{
 
 
 .div-tipicos:hover{
-    background-color: #485d73;
+    background-color: #2c343b;
 }
 </style>

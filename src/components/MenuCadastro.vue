@@ -77,11 +77,13 @@ a {
 }
 
 a:hover{
-    color: #2d3c4c;
+    color: #cbcdce;
 }
 
 
 .div-tipicos:hover{
-    background-color: #2c343b;
+    background-color: #465059;
+    -webkit-box-shadow: 4px 0px 20px -11px #000000;
+    box-shadow: 4px 0px 20px -11px #000000;
 }
 </style>

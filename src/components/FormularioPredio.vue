@@ -27,10 +27,7 @@
 
         <b-row>
           <b-col cols="12" class="ml-auto">
-            <b-button type="reset" variant="danger">Limpar</b-button>
-            <b-button class="m-2" type="submit" variant="primary"
-              >Cadastrar</b-button
-            >
+            <GrupoBotaoForm/>
           </b-col>
         </b-row>
       </b-form>
@@ -39,7 +36,11 @@
 </template>
 
 <script>
+import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue'
 export default {
+  components:{
+    GrupoBotaoForm
+  },
   data() {
     return {
       formulario: {

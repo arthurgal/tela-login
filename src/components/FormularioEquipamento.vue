@@ -1,11 +1,11 @@
 <template>
   <b-container class="w-75 m-auto pt-5">
-    <b-row>
-      <h2 class="mb-4">Cadastro de Novo Equipamentos</h2>
+    <b-row class="linha-titulo">
+      <h2 class="mb-2">Cadastro de Novo Equipamentos</h2>
     </b-row>
     <b-row>
       <b-form>
-        <b-row class="mb-3">
+        <b-row class="mb-3 mt-5">
           <b-col sm="12" md="12" lg="12" xl="4">
             <b-form-group id="input-group-1" label="Tombo:" label-for="input-1">
               <b-form-input
@@ -124,10 +124,7 @@
 
         <b-row>
           <b-col cols="12" class="ml-auto">
-            <b-button type="reset" variant="danger">Limpar</b-button>
-            <b-button class="m-2" type="submit" variant="primary"
-              >Cadastrar</b-button
-            >
+            <GrupoBotaoForm/>
           </b-col>
         </b-row>
       </b-form>
@@ -136,8 +133,14 @@
 </template>
 
 <script>
+
+import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue';
+
 export default {
   name: "FormularioEquipamento",
+  components:{
+    GrupoBotaoForm
+  },
   data() {
     return {
       formulario: {
@@ -167,3 +170,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .linha-titulo{
+    border-bottom:solid 2px #20262c;
+    color: #20262c;
+  }
+
+</style>

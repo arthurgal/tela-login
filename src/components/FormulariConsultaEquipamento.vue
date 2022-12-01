@@ -1,11 +1,11 @@
 <template>
     <b-container class="w-75 m-auto pt-5">
-        <b-row>
-            <h2 class="mb-4">Consulta de Equipamentos</h2>
+        <b-row class="linha-titulo">
+            <h2 class="mb-2">Consulta de Equipamentos</h2>
         </b-row>
         <b-row>
             <b-form>
-                <b-row class="mb-3">
+                <b-row class="mb-3 mt-5">
                     <b-col sm="12" md="12" lg="12" xl="4">
                         <b-form-group id="input-group-1" label="Tombo:" label-for="input-1">
                             <b-form-input class="mt-2" id="input-1" v-model="formulario.tombo" type="text" required>
@@ -133,3 +133,12 @@ export default {
     },
 };
 </script>
+
+
+<style scoped>
+  .linha-titulo{
+    border-bottom:solid 2px #20262c;
+    color: #20262c;
+  }
+
+</style>

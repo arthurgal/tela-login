@@ -7,7 +7,7 @@
     <b-row>
       <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3">
-          <b-col sm="12" md="12" lg="12" xl="6">
+          <b-col sm="12" md="12" lg="12" xl="4">
             <b-form-group
               id="input-group-1"
               label="Sala:"
@@ -22,21 +22,39 @@
               ></b-form-input>
             </b-form-group>
           </b-col>
+
+          <b-col sm="12" md="12" lg="12" xl="4">
+            <b-form-group
+              id="input-group-2"
+              label="Andar:"
+              label-for="input-2"
+            >
+              <b-form-input
+                class="mt-2"
+                id="input-2"
+                v-model="formulario.andar"
+                type="text"
+                required
+              ></b-form-input>
+            </b-form-group>
+          </b-col>
           
-          <b-col sm="12" md="12" lg="12" xl="6">
-            <b-form-group id="input-group-" label="Predio:" label-for="input-2">
+          <b-col sm="12" md="12" lg="12" xl="4">
+            <b-form-group id="input-group-3" label="Predio:" label-for="input-3">
               <b-form-select
                 class="w-100 p-2 mt-2"
-                id="input-2"
-                v-model="formulario.predioData"
-                :options="formulario.predio"
+                id="input-3"
+                v-model="formulario.predio"
+                :options="predioData"
                 required
               ></b-form-select>
             </b-form-group>
           </b-col>
         </b-row>
 
-        {{formulario.predio}}
+        <div>
+          {{formulario}}
+        </div>
 
 
         <b-row>
@@ -61,14 +79,15 @@ export default {
     return {
       formulario: {
         sala: "",
-        predioData: null,
-        predio: ["teste", "teste2"]
+        andar: "",
+        predio: null,
       },
+      predioData: []
     };
   },
 
   methods:{
-    salvar(){
+     salvar(){
       serviceSala.salvar(this.formulario).then(() => {
         this.onSubmit()
       })
@@ -77,9 +96,10 @@ export default {
     async getPredio(){
       const req = await serviceSala.getPredio()
 
-      console.log(req)
-
-      this.predio = req.data
+      this.predioData = req.data.map(elem => ({
+        text: elem.predio, 
+        value: elem,
+      }))
 
 
     },
@@ -97,7 +117,6 @@ export default {
 
   mounted(){
     this.getPredio()
-    console.log("teste")
   }
   
 };

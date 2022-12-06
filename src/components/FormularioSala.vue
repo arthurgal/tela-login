@@ -28,8 +28,8 @@
               <b-form-select
                 class="w-100 p-2 mt-2"
                 id="input-2"
-                v-model="formulario.predio"
-                :options="predio"
+                v-model="formulario.predioData"
+                :options="formulario.predio"
                 required
               ></b-form-select>
             </b-form-group>
@@ -61,7 +61,8 @@ export default {
     return {
       formulario: {
         sala: "",
-        predio: [],
+        predioData: null,
+        predio: ["teste", "teste2"]
       },
     };
   },
@@ -73,10 +74,14 @@ export default {
       })
     },
 
-    getPredio(){
-      serviceSala.getPredio().then((resposta) => {
-        console.table(resposta.data)
-      })
+    async getPredio(){
+      const req = await serviceSala.getPredio()
+
+      console.log(req)
+
+      this.predio = req.data
+
+
     },
     onSubmit(event) {
         event.preventDefault()
@@ -92,6 +97,7 @@ export default {
 
   mounted(){
     this.getPredio()
+    console.log("teste")
   }
   
 };

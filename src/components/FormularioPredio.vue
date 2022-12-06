@@ -5,7 +5,7 @@
     </b-row>
 
     <b-row>
-      <b-form>
+      <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3">
           <b-col sm="12" md="12" lg="12" xl="6">
             <b-form-group
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import servicePredio from "@/services/servicePredio.js"
 import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue'
 export default {
   components:{
@@ -48,5 +49,24 @@ export default {
       },
     };
   },
+
+  methods:{
+    salvar(){
+      servicePredio.salvar(this.formulario).then(() => {
+        this.onSubmit();
+      })
+    },
+    onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.formulario))
+      },
+
+      onReset(event) {
+        event.preventDefault()
+        // Reset our form values
+        this.formulario.predio = ''
+
+      }
+  }
 };
 </script>

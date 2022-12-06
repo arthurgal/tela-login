@@ -5,7 +5,7 @@
     </b-row>
 
     <b-row>
-      <b-form>
+      <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3">
           <b-col sm="12" md="12" lg="12" xl="6">
             <b-form-group
@@ -36,6 +36,8 @@
           </b-col>
         </b-row>
 
+        {{formulario.predio}}
+
 
         <b-row>
           <b-col cols="12" class="ml-auto">
@@ -49,6 +51,7 @@
 
 <script>
 import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue'
+import serviceSala from '@/services/serviceSala'
 export default {
   components:{
     GrupoBotaoForm
@@ -58,14 +61,38 @@ export default {
     return {
       formulario: {
         sala: "",
-        predio: null,
+        predio: [],
       },
-      predio: [
-        { text: "Selecione", value: null },
-        "Gaeco",
-        "PGJ",
-      ],
     };
   },
+
+  methods:{
+    salvar(){
+      serviceSala.salvar(this.formulario).then(() => {
+        this.onSubmit()
+      })
+    },
+
+    getPredio(){
+      serviceSala.getPredio().then((resposta) => {
+        console.table(resposta.data)
+      })
+    },
+    onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.formulario))
+      },
+
+      onReset(event) {
+        event.preventDefault()
+        this.formulario.sala = ''
+
+      }
+  },
+
+  mounted(){
+    this.getPredio()
+  }
+  
 };
 </script>

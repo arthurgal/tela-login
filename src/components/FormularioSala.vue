@@ -111,6 +111,7 @@ export default {
       onReset(event) {
         event.preventDefault()
         this.formulario.sala = ''
+        this.formulario.andar = ''
 
       }
   },

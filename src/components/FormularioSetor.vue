@@ -80,7 +80,7 @@ export default {
       
 
       this.salaData = req.data.map(elem => ({
-        text: elem.sala,
+        text: elem.sala +  " - " + elem.andar,
         value: elem,
       }))
 

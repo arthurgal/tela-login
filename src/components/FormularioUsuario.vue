@@ -5,7 +5,7 @@
     </b-row>
 
     <b-row>
-      <b-form>
+      <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3">
           <b-col sm="12" md="12" lg="12" xl="3">
             <b-form-group
@@ -40,7 +40,7 @@
                 class="w-100 p-2 mt-2"
                 id="input-3"
                 v-model="formulario.setor"
-                :options="setor"
+                :options="setorData"
                 required
               ></b-form-select>
             </b-form-group>
@@ -58,6 +58,7 @@
 
 <script>
 import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue'
+import serviceUsuario from '@/services/serviceUsuario'
 export default {
 
   components:{
@@ -67,16 +68,47 @@ export default {
     return {
       formulario: {
         matricula: "",
+        nome: "",
         setor: null,
       },
-      setor: [
-        { text: "Selecione", value: null },
-        "LAbti",
-        "Forense",
-        "PP",
-        "Macro",
-      ],
+      setorData: [],
     };
   },
+
+  methods:{
+    salvar(){
+      serviceUsuario.salvar(this.formulario).then(() => {
+
+      })
+    },
+
+    async getSetor(){
+      const req = await serviceUsuario.getSetor()
+
+      this.setorData = req.data.map(elem => ({
+        text: elem.setor + " - Sala: " + elem.sala.sala + " " + elem.sala.andar,
+        value: elem,
+      }))
+
+    },
+
+    onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.formulario))
+      },
+
+      onReset(event) {
+        event.preventDefault()
+        this.formulario.matricula = ''
+        this.formulario.nome = ''
+
+      },
+
+  },
+
+  mounted(){
+    this.getSetor()
+  }
+
 };
 </script>

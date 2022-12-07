@@ -5,7 +5,7 @@
     </b-row>
 
     <b-row>
-      <b-form>
+      <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3">
           <b-col sm="12" md="12" lg="12" xl="6">
             <b-form-group
@@ -24,12 +24,12 @@
           </b-col>
           
           <b-col sm="12" md="12" lg="12" xl="6">
-            <b-form-group id="input-group-" label="Sala:" label-for="input-3">
+            <b-form-group id="input-group-2" label="Sala:" label-for="input-2">
               <b-form-select
                 class="w-100 p-2 mt-2"
-                id="input-3"
+                id="input-2"
                 v-model="formulario.sala"
-                :options="sala"
+                :options="salaData"
                 required
               ></b-form-select>
             </b-form-group>
@@ -43,12 +43,15 @@
           </b-col>
         </b-row>
       </b-form>
+
+      {{formulario}}
     </b-row>
   </b-container>
 </template>
 
 <script>
 import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue'
+import serviceSetor from '@/services/serviceSetor'
 export default {
   components:{
     GrupoBotaoForm
@@ -60,14 +63,48 @@ export default {
         setor: "",
         sala: null,
       },
-      sala: [
-        { text: "Selecione", value: null },
-        "1",
-        "2",
-        "3",
-        "4",
-      ],
+      salaData: [],
     };
   },
+
+  methods:{
+    
+    salvar(){
+      serviceSetor.salvar(this.formulario).then(() => {
+      this.onSubmit()
+      })
+    },
+
+    async getSala(){
+      const req = await serviceSetor.getSala()
+      
+
+      this.salaData = req.data.map(elem => ({
+        text: elem.sala,
+        value: elem,
+      }))
+
+
+    },
+
+    onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.formulario))
+      },
+
+      onReset(event) {
+        event.preventDefault()
+        this.formulario.setor = ''
+
+      },
+      
+  
+
+  },
+
+  mounted(){
+    this.getSala()
+  }
+
 };
 </script>

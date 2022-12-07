@@ -6,6 +6,6 @@ export default {
     },
 
     getPredio: () => {
-        return http.get('/predio?qtd=3&pagina=0&ordenacao=id')
+        return http.get('/predio')
     }
 }

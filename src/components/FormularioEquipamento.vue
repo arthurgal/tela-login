@@ -4,14 +4,14 @@
       <h2 class="mb-2">Cadastro de Novo Equipamentos</h2>
     </b-row>
     <b-row>
-      <b-form>
+      <b-form @submit="salvar" @reset="onReset">
         <b-row class="mb-3 mt-5">
           <b-col sm="12" md="12" lg="12" xl="4">
             <b-form-group id="input-group-1" label="Tombo:" label-for="input-1">
               <b-form-input
                 class="mt-2"
                 id="input-1"
-                v-model="formulario.nome"
+                v-model="formulario.tombo"
                 type="text"
                 required
               ></b-form-input>
@@ -27,7 +27,7 @@
                 class="w-100 p-2 mt-2"
                 id="input-2"
                 v-model="formulario.tipoEquipamento"
-                :options="tipoEquipamento"
+                :options="tipoEquipamentoData"
                 required
               ></b-form-select>
             </b-form-group>
@@ -42,8 +42,8 @@
               <b-form-select
                 class="w-100 p-2 mt-2"
                 id="input-3"
-                v-model="formulario.status"
-                :options="status"
+                v-model="formulario.statusEquipamento"
+                :options="statusData"
                 required
               ></b-form-select>
             </b-form-group>
@@ -88,22 +88,10 @@
               <b-form-input
                 class="mt-2"
                 id="input-6"
-                v-model="formulario.numSerie"
+                v-model="formulario.numeroDeSerie"
                 type="text"
                 required
               ></b-form-input>
-            </b-form-group>
-          </b-col>
-
-          <b-col sm="12" md="12" lg="12" xl="2">
-            <b-form-group id="input-group-7" v-slot="{ ariaDescribedby }">
-              <b-form-checkbox-group
-                v-model="formulario.checked"
-                id="checkboxes-7"
-                :aria-describedby="ariaDescribedby"
-              >
-                <b-form-checkbox value="Não">Não Aparente</b-form-checkbox>
-              </b-form-checkbox-group>
             </b-form-group>
           </b-col>
         </b-row>
@@ -117,7 +105,7 @@
               id="textarea-default"
               rows="8"
               placeholder="Descrição Complementar"
-              v-model="formulario.descricao"
+              v-model="formulario.observacao"
             ></b-form-textarea>
           </b-col>
         </b-row>
@@ -129,12 +117,14 @@
         </b-row>
       </b-form>
     </b-row>
+    {{formulario}}
   </b-container>
 </template>
 
 <script>
 
 import GrupoBotaoForm from '@/components/GrupoBotaoForm.vue';
+import serviceEquipamento from '@/services/serviceEquipamento';
 
 export default {
   name: "FormularioEquipamento",
@@ -144,30 +134,67 @@ export default {
   data() {
     return {
       formulario: {
-        nome: "",
+        tombo: "",
         tipoEquipamento: null,
-        status: null,
+        statusEquipamento: null,
         marca: "",
         modelo: "",
-        numSerie: "",
-        checked: [],
-        descricao: "",
+        numeroDeSerie: "",
+        observacao: "",
       },
-      tipoEquipamento: [
-        { text: "Selecione", value: null },
-        "Computador",
-        "Notebook",
-        "Monitor",
-        "Estabilizaor",
-      ],
-      status: [
-        { text: "Selecione", value: null },
-        "Funcionando",
-        "Quebrado",
-        "Ocioso",
-      ],
+      tipoEquipamentoData: [],
+      statusData: [],
     };
   },
+
+  methods:{
+
+    salvar(){
+      serviceEquipamento.salvar(this.formulario).then(() => {
+
+      })
+    },
+
+    async getTipo(){
+      const req = await serviceEquipamento.getTipo()
+      this.tipoEquipamentoData = req.data.map(elem => ({
+        text: elem.tipo,
+        value: elem,
+      }))
+
+    },
+
+    async getStatus(){
+      const req = await serviceEquipamento.getStatus()
+      this.statusData = req.data.map(elem => ({
+        text: elem.status,
+        value: elem,
+      }))
+    },
+
+    onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.formulario))
+      },
+
+      onReset(event) {
+        event.preventDefault()
+        this.formulario.tombo = ''
+        this.formulario.marca = ''
+        this.formulario.modelo = ''
+        this.formulario.numeroDeSerie = ''
+        this.formulario.observacao = ''
+
+      },
+
+  },
+
+  mounted(){
+    this.getTipo()
+    this.getStatus()
+  }
+
+
 };
 </script>
 

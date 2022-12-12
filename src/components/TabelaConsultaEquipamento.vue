@@ -1,20 +1,63 @@
 <template>
-    <b-container class="w-75 m-auto mt-5">
-      <b-table striped hover :items="items"></b-table>
-    </b-container>
-  </template>
+  <b-container class="w-75 m-auto mt-5">
+    <b-table responsive striped  :items="equipamentos" :fields="fields"></b-table>
+  </b-container>
   
-  <script>
-    export default {
-      data() {
-        return {
-          items: [
-            { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-            { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-            { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-            { age: 38, first_name: 'Jami', last_name: 'Carney' }
-          ]
-        }
-      }
-    }
-  </script>
+</template>
+  
+<script>
+import serviceEquipamento from "@/services/serviceEquipamento";
+
+export default {
+  data() {
+    return {
+      equipamentos: [],
+      fields: [
+        {
+          key: 'tombo',
+        },
+        {
+          key: 'tipoEquipamento.tipo',
+          label: 'Tipo Equipamento'
+        },
+        {
+          key: 'statusEquipamento.status',
+          label: 'Status'
+        },
+        {
+          key: 'marca',
+        },
+        {
+          key: 'modelo',
+        },
+        {
+          key: 'numeroDeSerie',
+          label: 'Numero de Serie'
+        },
+        {
+          key: 'usuario.nome',
+          label: 'Usuario'
+        },
+        {
+          key: 'usuario.setor.setor',
+          label: 'Setor',
+        },
+
+
+      ],
+    };
+  },
+
+  methods: {
+    async listar() {
+      const req = await serviceEquipamento.getAllEquipamentos();
+      this.equipamentos = req.data
+      console.log(this.equipamentos)
+    },
+  },
+
+  mounted() {
+    this.listar();
+  },
+};
+</script>

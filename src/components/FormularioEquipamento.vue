@@ -51,7 +51,7 @@
         </b-row>
 
         <b-row class="mb-3">
-          <b-col sm="12" md="12" lg="12" xl="4">
+          <b-col sm="12" md="12" lg="12" xl="3">
             <b-form-group id="input-group-4" label="Marca:" label-for="input-4">
               <b-form-input
                 class="mt-2"
@@ -94,6 +94,23 @@
               ></b-form-input>
             </b-form-group>
           </b-col>
+
+          <b-col sm="12" md="12" lg="12" xl="3">
+            <b-form-group
+              id="input-group-7"
+              label="Usuario:"
+              label-for="input-7"
+            >
+              <b-form-select
+                class="w-100 p-2 mt-2"
+                id="input-7"
+                v-model="formulario.usuario"
+                :options="usuarioData"
+                required
+              ></b-form-select>
+            </b-form-group>
+          </b-col>
+          
         </b-row>
 
         <b-row class="mt-3">
@@ -137,6 +154,7 @@ export default {
         tombo: "",
         tipoEquipamento: null,
         statusEquipamento: null,
+        usuario: null,
         marca: "",
         modelo: "",
         numeroDeSerie: "",
@@ -144,6 +162,7 @@ export default {
       },
       tipoEquipamentoData: [],
       statusData: [],
+      usuarioData: []
     };
   },
 
@@ -172,6 +191,14 @@ export default {
       }))
     },
 
+    async getUsuarios(){
+      const req = await serviceEquipamento.getUsuarios()
+      this.usuarioData = req.data.map(elem => ({
+        text: elem.matricula + " - " + elem.nome,
+        value: elem,
+      }))
+    },
+
     onSubmit(event) {
         event.preventDefault()
         alert(JSON.stringify(this.formulario))
@@ -192,6 +219,7 @@ export default {
   mounted(){
     this.getTipo()
     this.getStatus()
+    this.getUsuarios()
   }
 
 

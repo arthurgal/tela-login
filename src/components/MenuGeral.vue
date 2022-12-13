@@ -12,9 +12,11 @@
     background-color: #20262c;
     text-decoration: none;
 }
-
 a {
     text-decoration: none;
     color: aliceblue;
 }
-</style>
+a:hover{
+    color: #cbcdce;
+}
+</style> 

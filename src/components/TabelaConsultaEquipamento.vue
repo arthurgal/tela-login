@@ -1,6 +1,6 @@
 <template>
   <b-container class="w-75 m-auto mt-5">
-    <b-col lg="6" class="my-1">
+    <b-col  lg="4" class="my-4">
         <b-form-group
           label-for="filter-input"
           label-cols-sm="3"

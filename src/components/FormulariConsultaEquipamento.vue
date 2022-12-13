@@ -8,14 +8,6 @@
         <b-button to="/cadastro/equipamento" variant="dark">Novo</b-button>
       </b-col>
     </b-row>
-    <b-row>
-      <b-input-group class="w-50 mt-5">
-        <b-form-input v-model="busca" placeholder="Busque por tombo"></b-form-input>
-        <b-input-group-append>
-          <b-button variant="outline-dark">Buscar</b-button>
-        </b-input-group-append>
-      </b-input-group>
-    </b-row>
   </b-container>
 </template>
   
